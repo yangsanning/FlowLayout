@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlowLayout">
+        <attr name="fl_select_type" format="enum">
+            <enum name="NONE" value="1" />
+            <enum name="SINGLE" value="2" />
+            <enum name="SINGLE_NOT_RESELECT" value="3" />
+            <enum name="MULTI" value="4" />
+        </attr>
+        <attr name="fl_default_select" format="integer" />
+        <attr name="fl_max_select" format="integer" />
+        <attr name="fl_max_lines" format="integer" />
+        <attr name="fl_text_color" format="reference|color" />
+        <attr name="fl_text_size" format="dimension" />
+        <attr name="fl_padding_left" format="dimension" />
+        <attr name="fl_padding_top" format="dimension" />
+        <attr name="fl_padding_right" format="dimension" />
+        <attr name="fl_padding_bottom" format="dimension" />
+        <attr name="fl_row_space" format="dimension" />
+        <attr name="fl_column_space" format="dimension" />
+        <attr name="fl_bg" format="reference|color" />
+    </declare-styleable>
+</resources>
