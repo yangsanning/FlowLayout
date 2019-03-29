@@ -2,6 +2,7 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -18,7 +19,7 @@
             android:minHeight="30dp"
             app:fl_bg="@drawable/bg_btn_flow_layout"
             app:fl_column_space="10dp"
-            app:fl_default_select="4"
+            app:fl_default_select="3"
             app:fl_padding_bottom="10dp"
             app:fl_padding_left="10dp"
             app:fl_padding_right="10dp"
@@ -31,7 +32,35 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="#e6e6e6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/main_activity_clear_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="取消选中"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/main_activity_max_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="设置最大行数"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
             android:background="#e6e6e6" />
 
@@ -51,5 +80,16 @@
             app:fl_select_type="SINGLE_NOT_RESELECT"
             app:fl_text_color="@drawable/bg_data_flow_layout_text_color"
             app:fl_text_size="14sp" />
+
+        <Button
+            android:id="@+id/main_activity_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="展开"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

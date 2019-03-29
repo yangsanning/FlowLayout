@@ -82,6 +82,7 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
 
     private OnItemClickListener onItemClickListener;
     private OnSelectChangeListener onSelectChangeListener;
+    private OnMoreThanMaxLineListener onMoreThanMaxLineListener;
 
     public FlowLayout(Context context) {
         this(context, null);
@@ -152,6 +153,9 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
             if (lineWidth + view.getMeasuredWidth() > maxWidth) {
                 lineCount++;
                 if (maxLines > 0 && lineCount > maxLines) {
+                    if (onMoreThanMaxLineListener != null) {
+                        onMoreThanMaxLineListener.onMoreThan(contentHeight);
+                    }
                     break;
                 }
                 contentHeight += rowSpace;
@@ -744,6 +748,13 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
     }
 
     /**
+     * 设置达到最大行数的监听
+     */
+    public void setOnMoreThanMaxLineListener(OnMoreThanMaxLineListener onMoreThanMaxLineListener) {
+        this.onMoreThanMaxLineListener = onMoreThanMaxLineListener;
+    }
+
+    /**
      * sp转px
      */
     public static int sp2px(Context context, float spVal) {
@@ -770,5 +781,13 @@ public class FlowLayout extends ViewGroup implements View.OnClickListener {
          * @param position item的position
          */
         void onSelectChange(TextView textView, Object data, boolean isSelect, int position);
+    }
+
+    public interface OnMoreThanMaxLineListener {
+
+        /**
+         * @param contentHeight 内容高度
+         */
+        void onMoreThan(int contentHeight);
     }
 }
