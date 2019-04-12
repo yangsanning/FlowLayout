@@ -22,11 +22,11 @@ allprojects {
     }
 
     ext {
-        COMPILE_SDK_VERSION = 28
+        COMPILE_SDK_VERSION = 27
         MIN_SDK_VERSION = 19
-        TARGET_SDK_VERSION = 28
+        TARGET_SDK_VERSION = 27
         //未经测试，不要随意升级支持库的版本
-        SUPPORT_LIBRARY_VERSION = '28.0.0'
+        SUPPORT_LIBRARY_VERSION = '27.1.1'
     }
 }
 
